@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en , fa">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <title>Sonnat | Contrast Ratio</title>
+   <meta name="description" content="Learning without boundries">
+   <!-- style  -->
+   <link rel="stylesheet" href="static/css/contrastCheckerStyle.css">
+   <link rel="stylesheet" href="static/css/media.css">
+   <!-- script  -->
+   <script src="static/js/jquery.min.js"></script>
+   <script src="static/js/html2canvas.js"></script>
+</head>
+
+<body>
+   <div class="app">
+      <div class="header-wrapper bgWhite98">
+         <!-- <div class="burgerBtn">
+               <div class="burgerIcon burgerTop bgBlack54"></div>
+               <div class="burgerIcon burgerBottom bgBlack54"></div>
+               </div> -->
+         <div class="headerLogo"></div>
+      </div>
+      <div class="main">
+         <div class="leftPanel">
+            <div class="leftPanelWrapper">
+               <div class="leftPanelContainer">
+                  <h2 class="clrBlack87">Colors</h2>
+                  <div class="colorInputForm textColorContainer">
+                     <h3 class="clrBlack87">Text colors</h3>
+                     <div class="colorInputTitleContainer">
+                        <span class="colorPreviewTitle clrBlack38">Preview</span>
+                        <span class="colorInputTitle clrBlack38">Hex color</span>
+                        <span class="colorAlphaTitle clrBlack38">α (%)</span>
+                     </div>
+                     <div id="t1" class="colorInputContainer textColorField">
+                        <div class="fieldIndicator bgRed"></div>
+                        <div class="colorPreviewWrapper">
+                           <div class="colorPreviewContainer">
+                              <div class="colorPreview"></div>
+                           </div>
+                        </div>
+                        <input class="colorHexInput clrBlack87 textColor">
+                        <input class="colorAlphaInput clrBlack87" type="number" min="0" max="100" value="100">
+                        <div class="removeFieldContainer   ">
+                           <div class="removeField bgRed"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="addNewColorWrapper addTextColorField">
+                     <div class="addNewColorContainer bgBlue clrWhite">
+                        <div class="addIconContainer">
+                           <div class="addIconVertical bgWhite"></div>
+                           <div class="addIconHorizontal bgWhite"></div>
+                        </div>
+                        <span>New color</span>
+                     </div>
+                  </div>
+                  <div class="devider bgBlack12"></div>
+                  <div class="colorInputForm backColorContainer">
+                     <h3 class="clrBlack87">Background colors</h3>
+                     <div class="colorInputTitleContainer">
+                        <span class="colorPreviewTitle clrBlack38">Preview</span>
+                        <span class="colorInputTitle clrBlack38">Hex color</span>
+                     </div>
+                     <div id="b1" class="colorInputContainer backColorField ">
+                        <div class="fieldIndicator bgRed"></div>
+                        <div class="colorPreviewWrapper">
+                           <div class="colorPreviewContainer">
+                              <div class="colorPreview"></div>
+                           </div>
+                        </div>
+                        <input class="colorHexInput clrBlack87 backColor" value="ffffff">
+                        <div class="removeFieldContainer ">
+                           <div class="removeField bgRed"></div>
+                        </div>
+                     </div>
+                     <div id="b2" class="colorInputContainer  backColorField ">
+                        <div class="fieldIndicator bgRed"></div>
+                        <div class="colorPreviewWrapper">
+                           <div class="colorPreviewContainer">
+                              <div class="colorPreview"></div>
+                           </div>
+                        </div>
+                        <input class="colorHexInput clrBlack87 backColor" value="ffffff">
+                        <div class="removeFieldContainer ">
+                           <div class="removeField bgRed"></div>
+                        </div>
+                     </div>
+                     <div id="b3" class="colorInputContainer backColorField ">
+                        <div class="fieldIndicator bgRed"></div>
+                        <div class="colorPreviewWrapper">
+                           <div class="colorPreviewContainer">
+                              <div class="colorPreview"></div>
+                           </div>
+                        </div>
+                        <input class="colorHexInput clrBlack87 backColor" value="ffffff">
+                        <div class="removeFieldContainer ">
+                           <div class="removeField bgRed"></div>
+                        </div>
+                     </div>
+                     <div id="b4" class="colorInputContainer backColorField">
+                        <div class="fieldIndicator bgRed"></div>
+                        <div class="colorPreviewWrapper">
+                           <div class="colorPreviewContainer">
+                              <div class="colorPreview"></div>
+                           </div>
+                        </div>
+                        <input class="colorHexInput clrBlack87 backColor" value="ffffff">
+                        <div class="removeFieldContainer ">
+                           <div class="removeField bgRed"></div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="addNewColorWrapper addBackColorField hidden">
+                     <div class="addNewColorContainer bgBlue clrWhite">
+                        <div class="addIconContainer">
+                           <div class="addIconVertical bgWhite"></div>
+                           <div class="addIconHorizontal bgWhite"></div>
+                        </div>
+                        <span>New back color</span>
+                     </div>
+                  </div>
+                  <div class="devider bgBlack12"></div>
+                  <div class="exportBtnWrapper">
+                     <div class="exportBtnContainer bgRed clrWhite">
+                        <div class="exportIconContainer"></div>
+                        <span>Export table</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="rightPanel">
+            <div class="rightPanelWrapper">
+               <h1>Contrast ratio table</h1>
+               <div class="paletteTableWrapper">
+                  <div id="row1" class="paletteTableRow">
+                     <div id="t1b1" class="paletteTableCell">
+                        <div class="backgroundColorContainer">
+                           <span class="foregroundText">Aa</span>
+                        </div>
+                        <div class="resultWrapper ">
+                           <div class="resultContainer">
+                              <div class="resultIcon"></div>
+                              <div class="resultTypeContainer clrWhite">
+                                 <span class="resultTypeAAA">AAA</span>
+                                 <span class="resultTypeAA">AA</span>
+                                 <span class="resultTypeAA18">AA18</span>
+                                 <span class="resultTypeDNP">DNP</span>
+                              </div>
+                              <span class="resultRatio clrWhite"> </span>
+                           </div>
+                           <div class="paletteInfoContainer" data-html2canvas-ignore>
+                              <div class="brightnessSliderContainer">
+                                 <div class="rangeTooltipWrapper">
+                                    <div class="rangeTooltipContainer"></div>
+                                 </div>
+                                 <input type="range" name="lightness">
+                              </div>
+                              <div class="textInfoContainer clrWhite">
+                                 <span class="textInfoTitle">Text color</span>
+                                 <span class="textInfo"> </span>
+                              </div>
+                              <div class="backInfoContainer clrWhite">
+                                 <span class="backInfoTitle">Background color</span>
+                                 <span class="backInfo"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="saveBtnContainer bgBlue clrWhite" data-html2canvas-ignore>Save</div>
+                        <div class="resetBtnContainer bgRed clrWhite" data-html2canvas-ignore>Reset</div>
+                     </div>
+                     <div id="t1b2" class="paletteTableCell">
+                        <div class="backgroundColorContainer">
+                           <span class="foregroundText">Aa</span>
+                        </div>
+                        <div class="resultWrapper ">
+                           <div class="resultContainer">
+                              <div class="resultIcon"></div>
+                              <div class="resultTypeContainer clrWhite">
+                                 <span class="resultTypeAAA">AAA</span>
+                                 <span class="resultTypeAA">AA</span>
+                                 <span class="resultTypeAA18">AA18</span>
+                                 <span class="resultTypeDNP">DNP</span>
+                              </div>
+                              <span class="resultRatio clrWhite"> </span>
+                           </div>
+                           <div class="paletteInfoContainer" data-html2canvas-ignore>
+                              <div class="brightnessSliderContainer">
+                                 <div class="rangeTooltipWrapper">
+                                    <div class="rangeTooltipContainer"></div>
+                                 </div>
+                                 <input type="range" name="lightness">
+                              </div>
+                              <div class="textInfoContainer clrWhite">
+                                 <span class="textInfoTitle">Text color</span>
+                                 <span class="textInfo"> </span>
+                              </div>
+                              <div class="backInfoContainer clrWhite">
+                                 <span class="backInfoTitle">Background color</span>
+                                 <span class="backInfo"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="saveBtnContainer bgBlue clrWhite" data-html2canvas-ignore>Save</div>
+                        <div class="resetBtnContainer bgRed clrWhite" data-html2canvas-ignore>Reset</div>
+                     </div>
+                     <div id="t1b3" class="paletteTableCell">
+                        <div class="backgroundColorContainer">
+                           <span class="foregroundText">Aa</span>
+                        </div>
+                        <div class="resultWrapper ">
+                           <div class="resultContainer">
+                              <div class="resultIcon"></div>
+                              <div class="resultTypeContainer clrWhite">
+                                 <span class="resultTypeAAA">AAA</span>
+                                 <span class="resultTypeAA">AA</span>
+                                 <span class="resultTypeAA18">AA18</span>
+                                 <span class="resultTypeDNP">DNP</span>
+                              </div>
+                              <span class="resultRatio clrWhite"> </span>
+                           </div>
+                           <div class="paletteInfoContainer" data-html2canvas-ignore>
+                              <div class="brightnessSliderContainer">
+                                 <div class="rangeTooltipWrapper">
+                                    <div class="rangeTooltipContainer"></div>
+                                 </div>
+                                 <input type="range" name="lightness">
+                              </div>
+                              <div class="textInfoContainer clrWhite">
+                                 <span class="textInfoTitle">Text color</span>
+                                 <span class="textInfo"> </span>
+                              </div>
+                              <div class="backInfoContainer clrWhite">
+                                 <span class="backInfoTitle">Background color</span>
+                                 <span class="backInfo"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="saveBtnContainer bgBlue clrWhite" data-html2canvas-ignore>Save</div>
+                        <div class="resetBtnContainer bgRed clrWhite" data-html2canvas-ignore>Reset</div>
+                     </div>
+                     <div id="t1b4" class="paletteTableCell">
+                        <div class="backgroundColorContainer">
+                           <span class="foregroundText">Aa</span>
+                        </div>
+                        <div class="resultWrapper ">
+                           <div class="resultContainer">
+                              <div class="resultIcon"></div>
+                              <div class="resultTypeContainer clrWhite">
+                                 <span class="resultTypeAAA">AAA</span>
+                                 <span class="resultTypeAA">AA</span>
+                                 <span class="resultTypeAA18">AA18</span>
+                                 <span class="resultTypeDNP">DNP</span>
+                              </div>
+                              <span class="resultRatio clrWhite"> </span>
+                           </div>
+                           <div class="paletteInfoContainer" data-html2canvas-ignore>
+                              <div class="brightnessSliderContainer">
+                                 <div class="rangeTooltipWrapper">
+                                    <div class="rangeTooltipContainer"></div>
+                                 </div>
+                                 <input type="range" name="lightness">
+                              </div>
+                              <div class="textInfoContainer clrWhite">
+                                 <span class="textInfoTitle">Text color</span>
+                                 <span class="textInfo"> </span>
+                              </div>
+                              <div class="backInfoContainer clrWhite">
+                                 <span class="backInfoTitle">Background color</span>
+                                 <span class="backInfo"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="saveBtnContainer bgBlue clrWhite" data-html2canvas-ignore>Save</div>
+                        <div class="resetBtnContainer bgRed clrWhite" data-html2canvas-ignore>Reset</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="imgExport"></div>
+
+   <script src="static/js/contrastChecker.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+@media screen and (max-width: 1280px) and (-webkit-min-device-pixel-ratio: 1) {
+    .rightPanel {
+        padding: 113px 16px 128px 16px;
+    }
+    .paletteTableCell.active {
+        transform: scale(1.2);
+        z-index: 2000;
+        transition: 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .foregroundText {
+        font-family: roboto;
+        font-size: 240%;
+        font-weight: 400;
+    }
+    .paletteTableCell.active .backgroundColorContainer .foregroundText {
+        -webkit-transform: translate(-110%, -124%) scale(.6666667);
+        -ms-transform: translate(-110%, -124%) scale(.6666667);
+        transform: translate(-110%, -124%) scale(.6666667);
+    }
+}
+
+@media screen and (max-width: 960px) and (-webkit-min-device-pixel-ratio: 1) {
+    .leftPanel {
+        display: none
+    }
+    .rightPanel {
+        width: 100%;
+        padding: 113px 32px 128px 32px;
+    }
+    .paletteTableWrapper {
+        margin-top: 48px;
+    }
+    .foregroundText {
+        font-family: roboto;
+        font-size: 240%;
+        font-weight: 400;
+    }
+    .paletteTableCell.active .backgroundColorContainer .foregroundText {
+        -webkit-transform: translate(-90%, -110%) scale(.6666667);
+        -ms-transform: translate(-90%, -110%) scale(.6666667);
+        transform: translate(-90%, -110%) scale(.6666667);
+    }
+    .resultTypeContainer {
+        font-size: .75rem;
+    }
+    .resultRatio {
+        font-size: .75rem;
+    }
+    .paletteTableCell.active {
+        transform: scale(1.2);
+        z-index: 2000;
+        transition: 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .textInfoTitle {
+        display: none
+    }
+    .backInfoTitle {
+        display: none
+    }
+}
+
+@media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1) {
+    .paletteTableWrapper {
+        padding-bottom: 1rem;
+    }
+    .resultTypeContainer {
+        font-size: .5rem;
+    }
+    .resultRatio {
+        font-size: .5rem;
+    }
+    .paletteTableCell.active {
+        transform: scale(5, 7);
+        z-index: 2000;
+        position: absolute;
+        left: 31.5vw;
+        top: 16vh;
+        transition: 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .paletteTableCell.active .backgroundColorContainer .foregroundText {
+        transform: translate(-30%, -50%) scale(.54, .4);
+        transition: 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .paletteTableCell.active .resultWrapper {
+        width: calc(100% - 1rem);
+        bottom: .5rem;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-transform: scaleY(3);
+        -ms-transform: scaleY(3);
+        transform: scaleY(3);
+        -webkit-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1) 200ms;
+        -o-transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1) 200ms;
+        transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1) 200ms;
+    }
+    .paletteTableCell.active .resultWrapper .resultContainer {
+        align-items: flex-start;
+        justify-content: space-between;
+        transform: scale(1.01, .15);
+        -webkit-transform-origin: 0 0%;
+        -ms-transform-origin: 0 0%;
+        transform-origin: 0 0%;
+        -webkit-transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1) 180ms;
+        -o-transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1) 180ms;
+        transition: 300ms cubic-bezier(0.165, 0.84, 0.44, 1) 180ms;
+    }
+    .paletteTableCell.active .resultWrapper .resultContainer .resultIcon {
+        transform: scale(.59, .9012);
+    }
+    .paletteTableCell.active .resultWrapper .resultContainer .resultTypeContainer {
+        display: flex;
+        transform: scale(.59, .9012);
+    }
+    .paletteTableCell.active .resultWrapper .resultContainer .resultRatio {
+        transform: scale(.59, .9012);
+    }
+    .paletteTableCell.active .resultWrapper .paletteInfoContainer {
+        transform: translateY(0) scaleY(.16);
+    }
+}
+
+@media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    .backgroundColorContainer {
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2vw;
+    }
+    .resultWrapper {
+        width: calc(100% - 4vw);
+        bottom: 2vw;
+    }
+    .resultIcon {
+        width: 24%;
+        min-width: 24%;
+    }
+    .resultTypeContainer {
+        display: none
+    }
+    .foregroundText {
+        font-size: calc(8vw - .25rem);
+        transform: translateY(0px)
+    }
+    .resultTypeContainer span {
+        display: none !important;
+    }
+}
